@@ -1,2 +1,8 @@
 node_modules
 .env
+
+#ignore all files in tmp folder
+tmp/*
+
+#but keep tmp folder
+!tmp/.keep
