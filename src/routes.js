@@ -14,5 +14,7 @@ routes.get('/incidents', IncidentController.index);
 routes.post('/incidents', IncidentController.store);
 routes.delete('/incidents/:id', IncidentController.delete);
 
+routes.put('/incidents/:id', IncidentController.updateChecked);
+
 
 module.exports = routes;
