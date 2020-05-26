@@ -13,6 +13,7 @@ function IncidentChecker(data){
     return curr.NR_NOTA_FISCAL !== acc.lastElement.NR_NOTA_FISCAL + 1 
     && curr.NR_CNPJ === acc.lastElement.NR_CNPJ
     && curr.DC_FLAG_COMISSIONADO === 'COMISSIONADO'
+    && acc.lastElement.DC_FLAG_COMISSIONADO === 'COMISSIONADO'
     ? {
       comErro: [
         ...acc.comErro,
