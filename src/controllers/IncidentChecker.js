@@ -3,10 +3,8 @@ const IncidentControler = require('./IncidentController');
 
 function IncidentChecker(data){
   data.map(async(record)=> {
-    if(record.DC_FLAG_COMISSIONADO === 'COMISSIONADO'){
-      if((record.P_COMISSAO * record.VL_RECORRENTE) !== record.VL_COMISSAO){
-        await IncidentControler.storeXlsx(record);
-      }
+    if((record.P_COMISSAO * record.VL_RECORRENTE) !== record.VL_COMISSAO && record.DC_FLAG_COMISSIONADO === 'COMISSIONADO'){
+      await IncidentControler.storeXlsx(record);
     }
   });
   const newData = data.reduce((acc, curr) => {
