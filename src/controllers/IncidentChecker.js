@@ -7,6 +7,7 @@ function IncidentChecker(data){
       await IncidentControler.storeXlsx(record);
     }
   });
+  //sim usar 3 && é feio demais, mas infelizmente a regra era assim :/
   const newData = data.reduce((acc, curr) => {
     return curr.NR_NOTA_FISCAL !== acc.lastElement.NR_NOTA_FISCAL + 1 
     && curr.NR_CNPJ === acc.lastElement.NR_CNPJ
