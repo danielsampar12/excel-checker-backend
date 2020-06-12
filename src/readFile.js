@@ -1,4 +1,7 @@
 const xlsx = require('xlsx');
+const fs = require('fs');
+const path = require('path');
+const { promisify } = require('util');
 
 function ReadFile(key){
   
@@ -12,7 +15,7 @@ function ReadFile(key){
     record.row = index + 2;
     return record;
   })
-
+  promisify(fs.unlink)(path.resolve(__dirname, '..', 'tmp', key));
   return newData;
 }
 
